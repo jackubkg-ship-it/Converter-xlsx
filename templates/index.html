@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Format Konvertoru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="mark">⇄</span>
+    <div>
+      <h1>Format Konvertoru</h1>
+      <p>Köhnə format (S/S, Tarix, DQ №-si...) → yeni format (Avtomobilin Markası, Dövlət qeydiyyat nişanı...)</p>
+    </div>
+  </header>
+
+  <section class="panel">
+    <div class="step" id="step1">
+      <h2>1. Köhnə fayl seçin</h2>
+      <label class="file-drop" id="file-drop">
+        <input type="file" id="file-input" accept=".xlsx,.xlsm" hidden>
+        <span id="file-drop-label">Fayl seçmək üçün klikləyin və ya sürüşdürün</span>
+      </label>
+      <p id="inspect-error" class="error hidden"></p>
+    </div>
+
+    <div class="step hidden" id="step2">
+      <h2>2. Parametrləri yoxlayın</h2>
+
+      <label class="field">
+        <span>Vərəq (podratçı mənbəyi)</span>
+        <select id="sheet-select"></select>
+      </label>
+
+      <label class="field">
+        <span>Podratçının adı (yeni faylda "... firmasından")</span>
+        <input type="text" id="contractor-input">
+      </label>
+
+      <label class="field">
+        <span>Sifarişçi şirkət (yeni faylda "... Ltd şirkəti")</span>
+        <input type="text" id="client-input" value="Salyan Oil">
+      </label>
+
+      <label class="field">
+        <span>Yekun faylın adı (uzantısız)</span>
+        <input type="text" id="filename-input">
+      </label>
+
+      <button id="convert-btn" class="btn">Çevir və yüklə</button>
+      <p id="convert-error" class="error hidden"></p>
+      <p id="convert-status" class="status hidden"></p>
+    </div>
+  </section>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
